@@ -10,35 +10,23 @@
     {
       "src": "/reservas",
       "dest": "server.js",
-      "methods": ["POST", "OPTIONS"]
+      "methods": ["POST"],
+      "headers": {
+        "Access-Control-Allow-Origin": "*",
+        "Access-Control-Allow-Methods": "POST, OPTIONS",
+        "Access-Control-Allow-Headers": "Content-Type"
+      }
     },
     {
       "src": "/(.*)",
       "dest": "server.js",
-      "methods": ["GET", "POST", "OPTIONS"]
-    }
-  ],
-  "headers": [
-    {
-      "source": "/(.*)",
-      "headers": [
-        {
-          "key": "Access-Control-Allow-Origin",
-          "value": "https://avianca-co-fn142.vercel.app"
-        },
-        {
-          "key": "Access-Control-Allow-Methods",
-          "value": "GET, POST, OPTIONS"
-        },
-        {
-          "key": "Access-Control-Allow-Headers",
-          "value": "Content-Type"
-        },
-        {
-          "key": "Access-Control-Allow-Credentials",
-          "value": "true"
-        }
-      ]
+      "methods": ["GET", "POST", , "OPTIONS"],
+      "headers": {
+        "Access-Control-Allow-Origin": "https://avianca-co.vercel.app",
+        "Access-Control-Allow-Methods": "GET, POST",
+        "Access-Control-Allow-Headers": "Content-Type"
+      }
     }
   ]
 }
+

@@ -10,21 +10,8 @@ const cors = require('cors');
 dotenv.config();
 const app = express ();
 // Configuración CORS para producción y desarrollo
-const corsOptions = {
-  origin: [
-    'https://avianca-co-fn142.vercel.app',
-    'http://localhost:5173' // Para desarrollo
-  ],
-  methods: ['GET', 'POST', 'OPTIONS'],
-  allowedHeaders: ['Content-Type'],
-  credentials: true
-};
 
-// Middleware CORS
-app.use(cors(corsOptions));
-// Manejo explícito de OPTIONS para preflight
-app.options('*', cors(corsOptions));
-
+ app.use(cors());
 app.use(express.json()); //para manejar json
 app.use('/reservas', reservasRouter);
 
