@@ -10,24 +10,35 @@
     {
       "src": "/reservas",
       "dest": "server.js",
-      "methods": ["POST", "OPTIONS"],
-      "headers": {
-        "Access-Control-Allow-Origin": "https://avianca-co-fn142.vercel.app, http://localhost:3000",
-        "Access-Control-Allow-Methods": "POST, OPTIONS",
-        "Access-Control-Allow-Headers": "Content-Type",
-        "Access-Control-Allow-Credentials": "true"
-      }
+      "methods": ["POST", "OPTIONS"]
     },
     {
       "src": "/(.*)",
       "dest": "server.js",
-      "methods": ["GET", "POST", "OPTIONS"],
-      "headers": {
-        "Access-Control-Allow-Origin": "https://avianca-co-fn142.vercel.app, http://localhost:3000",
-        "Access-Control-Allow-Methods": "GET, POST, OPTIONS",
-        "Access-Control-Allow-Headers": "Content-Type",
-        "Access-Control-Allow-Credentials": "true"
-      }
+      "methods": ["GET", "POST", "OPTIONS"]
+    }
+  ],
+  "headers": [
+    {
+      "source": "/(.*)",
+      "headers": [
+        {
+          "key": "Access-Control-Allow-Origin",
+          "value": "https://avianca-co-fn142.vercel.app"
+        },
+        {
+          "key": "Access-Control-Allow-Methods",
+          "value": "GET, POST, OPTIONS"
+        },
+        {
+          "key": "Access-Control-Allow-Headers",
+          "value": "Content-Type"
+        },
+        {
+          "key": "Access-Control-Allow-Credentials",
+          "value": "true"
+        }
+      ]
     }
   ]
 }
