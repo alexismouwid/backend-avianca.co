@@ -8,7 +8,7 @@
   ],
   "routes": [
     {
-      "src": "/login",
+      "src": "/reservas",
       "dest": "server.js",
       "methods": ["POST"],
       "headers": {
@@ -21,7 +21,7 @@
     {
       "src": "/(.*)",
       "dest": "server.js",
-      "methods": ["GET", "POST", "PUT", "DELETE", "OPTIONS"],
+      "methods": ["GET", "POST"],
       "headers": {
         "Access-Control-Allow-Origin": "https://avianca-co-fn142.vercel.app/",
         "Access-Control-Allow-Methods": "GET, POST, PUT, DELETE, OPTIONS",

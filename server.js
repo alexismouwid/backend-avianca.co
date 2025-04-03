@@ -10,7 +10,7 @@ const cors = require('cors');
 dotenv.config();
 const app = express ();
 
-app.use(cors({ origin: 'http://localhost:5173' }));
+app.use(cors());
 app.use(express.json()); //para manejar json
 app.use('/reservas', reservasRouter);
 
