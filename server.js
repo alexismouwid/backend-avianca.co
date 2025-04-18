@@ -1,6 +1,6 @@
 const express = require('express');
 const dotenv = require('dotenv');
-const reservasRouter = require('./routes/reservasRouter');
+const rutasVuelos = require('./routes/router');
 const mongoose = require('mongoose');
 const cors = require('cors');
 
@@ -23,11 +23,15 @@ app.use(cors({
 app.use(express.json());
 
 // Rutas
-app.use('/reservas', reservasRouter);
+app.use('/vuelos', rutasVuelos);
 
 // Base de datos
 const PORT = process.env.PORT || 5000;
 const databaseUrl = process.env.DATABASE_URL;
+if (!databaseUrl) {
+  console.error("❌ DATABASE_URL no está definido en las variables de entorno");
+  process.exit(1); // Detener la aplicación si no hay conexión
+}
 
 mongoose
   .connect(databaseUrl)
